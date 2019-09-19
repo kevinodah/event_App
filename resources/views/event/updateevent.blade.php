@@ -2,35 +2,31 @@
 
 
 @section('content')
-            <!-- Main component for call to action -->
-            <div class="container text-center">
-                <!-- heading -->
-                <h1 class="pull-xs-left">
-                    Update Event
-                </h1>
-                
+           
 
-                <div class="clearfix">
-                </div>
-                <br>
-                
-                <!--    ================ Add Notebook form==================== -->
-                <form action="{{route('update.event', $id)}}" method="post">
-                    {{csrf_field()}}
-                    {{method_field('PUT ')}}
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="title" placeholder="Enter Event Title Here" value= "{{$event->title}}">
-                    </div>
+            <div class="container">
+            <form action="{{route('update.event', $id)}}" method="post">
+            {{csrf_field()}}
+            {{method_field('PUT ')}}
+            <div class="field">
+          <div class="control">
+            <input class="input" type="text"   value= "{{$event->title}}">
+          </div>
+        </div>
+        
+        <div class="field">
+          <div class="control">
+            <textarea class="textarea" placeholder="Event Description"  >{{$event->description}}</textarea>
+          </div>
+        </div>
 
-                    <div class="form-group">
-                        <textarea name="body" class="form-control" rows="10" placeholder="Enter Event Description Here" value="{{$event->description}}"></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="title" placeholder="Enter Event Creator phone number Here" value="{{$event->contact}}">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Update Event <img src="http://chittagongit.com/download/430061" style=" height: 30px; width: 30px;"> </button>
-                </form>
+        <div class="field">
+            <div class="control">
+              <input class="input" type="text" value="{{$event->contact}}" name="contact" >
             </div>
+          </div>
+        
+            <button class="button is-link">Update Event</button>
+          </div>
+            </form>
 @endsection

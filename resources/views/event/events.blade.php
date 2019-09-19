@@ -56,10 +56,28 @@
                     </div>
                 @endforeach
                 @else
-                <p style="color:#D3D3D3; padding-left:140px; padding-top: 100px;">You have not added any events yet, Please click on the " New event + " button above to add a new event</p>
+                <p style="color:#9abaea; padding-left:140px; padding-top: 100px;">You have not added any events yet, Please click on the bot icon on the bottom extreme right hand side of this page and JARVIS will help you to create a new event, optionally you can click the " New event + " button above on the top extreme right hand side top of this page to add a new event, but we recommend that you make use of JARVIS to make have some fun!</p>
                 @endif
                 </div>
             </div>
+
+            <!-- BOTMAN -->
+
+<script>
+    var botmanWidget = {
+        frameEndpoint: "{{route('botman')}}",
+        chatServer: "{{route('chatserver_botman')}}",
+        introMessage: "Hello! my name is JARVIS and Welcome to the crowd sourcing app!<br><br>Please type 'start' in the text box below and I will help you to create your event!<br><br>You can also type in report to view event stats",
+        placeholderText: "Please type 'start or 'report'",
+        aboutText: 'Built 🔨 by Kevin',
+        aboutLink: 'https://twitter.com/OdahKevin',
+        title: 'Jarvis',
+        mainColor: '#ffaa41',
+        bubbleBackground: '#ffaa41',
+    };
+</script>
+<script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+<!-- BOTMAN END -->
 @endsection
 
 

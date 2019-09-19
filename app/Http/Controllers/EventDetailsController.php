@@ -21,15 +21,18 @@ class EventDetailsController extends Controller
 
 
         if($event->published == 1){
-            return redirect()->route('publish.verify');
-          }
-       
-        
+            return redirect()->route('events')->with('error', 'Sorry, but you cannot add more information to this event after you\'ve already created it, Thanks.');
+        }
         return View('eventdetails.addeventdetails', compact('venues','times','costs', 'id'));
     }
 
-
-   
+    public function updatepublished($id) {
+        $publish = Event::find($id);
+        $publishAdd = $publish->published;
+        $publishAdd = 1;
+        $publish->update(['published'=>$publishAdd]);
+        return redirect()->route('show.suggestion', $id);
+    }
 
     public function showSuggestionForm($id){
         $user = Auth::user();
@@ -37,11 +40,7 @@ class EventDetailsController extends Controller
           return redirect()->route('vote.verify');
         }
 
-        $publish = Event::find($id);
-        $publishAdd = $publish->published;
-        $publishAdd++;
-        $publish->update(['published'=>$publishAdd]);
-
+        
         $event = Event::find($id);
         $venues = $event->venues;
         $times = $event->times;
@@ -89,9 +88,6 @@ class EventDetailsController extends Controller
     }
     
   
-
-
-
     public function reports($id){
         $event = Event::find($id);
         $venues = $event->venues;
@@ -105,5 +101,5 @@ class EventDetailsController extends Controller
 
     public function published(){
         return View('event.verifyevent');
-}
+    }
 }

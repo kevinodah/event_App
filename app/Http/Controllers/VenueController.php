@@ -30,7 +30,7 @@ class VenueController extends Controller
         // $event = Event::find($id);
         // $event->venues()->destroy();
         Venue::destroy($venue_id);
-        return redirect()->route('event.plan', $event_id);
+        return redirect()->route('event.plan',$event_id);
 
     }
 

@@ -22,5 +22,10 @@ class CostController extends Controller
         );
         return redirect()->route('event.plan', $id);
     }
+
+    public function destroycost($cost_id, $event_id){
+        Cost::destroy($cost_id);
+        return redirect()->route('event.plan', $event_id);
+    }
     
 }

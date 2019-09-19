@@ -32,7 +32,7 @@ class EventsController extends Controller
     public function ShowEvent(){
         $user = Auth::user();
         $events = $user->events;
-        return View('event.events', compact('id','events'));
+        return View('home', compact('id','events'));
     }
 
     public function ShowEditEventForm($id){
@@ -61,5 +61,9 @@ class EventsController extends Controller
         return redirect()->route('events');
 
         
+    }
+    //BOTMAN
+    public function botmaniframe(){
+        return view('event.botman');
     }
 }
