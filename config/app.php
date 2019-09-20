@@ -227,5 +227,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
+    
+    'key' => env('APP_KEY', 'SomeRandomStringSomeRandomString'),
+
 
 ];
