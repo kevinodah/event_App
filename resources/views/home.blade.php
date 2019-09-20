@@ -20,14 +20,14 @@
                     <div class="card">
                         <header class="card-header">
                           <p class="card-header-title">
-                          <a href="{{route('event.plan', [$event->id]) }}" name="title">
+                          <a href="{{route('event.plan', $event)}}" name="title">
                                     {{$event->title}}
                                 </a>
                           </p>
                         </header>
                         <footer class="card-footer">
-                          <a href="{{route('editEventForm', $event->id)}}" class="card-footer-item"> <i class=" far fa-edit fa-fw"></i>&nbsp; Edit</a>
-                          <form action="{{route('destroy.event', $event->id)}}" class="card-footer-item" method="POST" style="display:inline">
+                          <a href="{{route('editEventForm', $event)}}" class="card-footer-item"> <i class=" far fa-edit fa-fw"></i>&nbsp; Edit</a>
+                          <form action="{{route('destroy.event', $event)}}" class="card-footer-item" method="POST" style="display:inline">
                             {{csrf_field()}}
                             {{method_field('DELETE')}}
                                 <input class="button is-text" style = "text-decoration: none; color: #3273dc" type="submit" value="Delete">

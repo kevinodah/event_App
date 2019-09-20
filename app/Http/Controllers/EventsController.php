@@ -32,7 +32,7 @@ class EventsController extends Controller
     public function ShowEvent(){
         $user = Auth::user();
         $events = $user->events;
-        return View('home', compact('id','events'));
+        return View('home', compact('events'));
     }
 
     public function ShowEditEventForm($id){
