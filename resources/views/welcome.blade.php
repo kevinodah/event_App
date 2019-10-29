@@ -127,7 +127,11 @@
         </div>
       </div>
     </div>
-
+    <!-- <footer class="footer"> -->
+      <p style="background-color:white" class="content has-text-centered has-text-black">
+        <!-- <p style="background-color:white  has-text-centered has-text-black"> -->
+          Built by <a href="https://twitter.com/OdahKevin"> <i class="fab fa-twitter"></i> Kevin Odah</a>
+        </p>
   </section>
 </div>
     </body>
