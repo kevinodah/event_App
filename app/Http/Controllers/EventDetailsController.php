@@ -21,7 +21,7 @@ class EventDetailsController extends Controller
 
 
         if($event->published == 1){
-            return redirect()->route('events')->with('error', 'Sorry, but you cannot add more information to this event after you\'ve already created it, Thanks.');
+            return redirect()->route('events')->with('error', 'Sorry, but you cannot add more information to this event after you\'ve published it, Thanks.');
         }
         return View('eventdetails.addeventdetails', compact('venues','times','costs', 'id'));
     }
@@ -31,7 +31,7 @@ class EventDetailsController extends Controller
         $publishAdd = $publish->published;
         $publishAdd = 1;
         $publish->update(['published'=>$publishAdd]);
-        return redirect()->route('show.suggestion', $id);
+        return redirect()->route('events')->with('success', 'Your event has been published succesfully!, click on the share button to start sharing!.');
     }
 
     public function showSuggestionForm($id){

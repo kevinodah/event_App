@@ -12,6 +12,12 @@ class EventsController extends Controller
     }
     
     public function AddEvent(Request $request){
+
+        $this->validate($request, [
+            'title'=>'required',
+            'description'=>'required',
+            'contact'=>'required',
+        ]);
         // dd($request);
         $title = $request->title;
         $description = $request->description;
@@ -31,7 +37,7 @@ class EventsController extends Controller
 
     public function ShowEvent(){
         $user = Auth::user();
-        $events = $user->events;
+        $events = $user->events()->orderBy('created_at', 'DESC')->get();
         return View('home', compact('events'));
     }
 

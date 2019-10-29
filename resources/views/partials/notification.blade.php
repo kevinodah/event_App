@@ -6,9 +6,7 @@
              </p>
           </div>
       </div>
-@endif
-
-@if ($message = Session::get('error'))
+@elseif ($message = Session::get('error'))
 <div class="container">
         <div class= "notification is-danger" style="box-shadow: 1px 2px 3px #aaaaaa;" >
           <p>
@@ -16,4 +14,17 @@
              </p>
           </div>
       </div>
+
+@elseif ($errors->any())
+<div class="container">
+        <div class= "notification is-danger" style="box-shadow: 1px 2px 3px #aaaaaa;" >
+          <p>
+          @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+             </p>
+          </div>
+      </div>
+
+    
 @endif

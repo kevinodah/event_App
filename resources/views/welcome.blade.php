@@ -131,6 +131,7 @@
   </section>
 </div>
     </body>
+    <script type="text/javascript" src="{{ URL::asset('js/vanilla.js') }}"></script>
 </html>
 
 

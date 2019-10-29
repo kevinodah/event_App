@@ -8,7 +8,6 @@
                 <br>
              
             <div class="container">
-            <p><b>Copy and share!:</b><a target="_blank" href="{{route('show.suggestion', $id)}}" style="text-decoration: underline"> {{route('show.suggestion', $id)}}</a></p><br>
         <div class="block">
             <div class="columns">
               <div class="column">
@@ -84,13 +83,13 @@
 
               <div class="column">
                   <section class="block">
-                      <h1 class="title is-4">TIME <i class="far fa-clock"></i> </h1>
+                      <h1 class="title is-4">TIME & DATE&nbsp;<i class="far fa-clock"></i> </h1>
                     </section>
                     <form action="{{route('create.time', $id)}}" method="POST">
                 {{csrf_field()}}
                     <div class="field">
                         <p class="control has-icons-left has-icons-right">
-                          <input class="input" type="text" placeholder="Starting Time" name="time_start">
+                          <input class="input" type="text" placeholder="Starting Time And Date" name="time_start">
                           <span class="icon is-small is-left">
                             <i class="fas fa-hourglass-start"></i>
                           </span>
@@ -101,7 +100,7 @@
                       </div>
                       <div class="field">
                         <p class="control has-icons-left">
-                          <input class="input" type="text" placeholder="Closing Time" name="time_stop">
+                          <input class="input" type="text" placeholder="Closing Time And Date" name="time_stop">
                           <span class="icon is-small is-left">
                             <i class="fas fa-hourglass-end"></i>
                           </span>
@@ -170,10 +169,7 @@
                       </div>
                       <div class="field">
                         <p class="control has-icons-left">
-                            <textarea class="textarea" placeholder="         Event Description" name="details"></textarea>
-                          <span class="icon is-small is-left">
-                            <i class="fas fa-pen"></i>
-                          </span>
+                            <textarea class="textarea" placeholder="Event Description" name="details"></textarea>
                         </p>
                       </div>
                       <div class="field">

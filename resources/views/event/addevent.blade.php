@@ -6,6 +6,8 @@
        
                 <form class="container" action="{{route('event.save')}}" method="post">
                     {{csrf_field()}}
+              @include('partials.notification')<br>
+                    
                 
         <div class="field" >
             <div class="control">

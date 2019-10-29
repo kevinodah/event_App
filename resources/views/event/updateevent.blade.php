@@ -5,18 +5,19 @@
            
 
             <div class="container">
+              @include('partials.notification')<br>
             <form action="{{route('update.event', $id)}}" method="post">
             {{csrf_field()}}
             {{method_field('PUT ')}}
             <div class="field">
           <div class="control">
-            <input class="input" type="text"   value= "{{$event->title}}">
+            <input class="input" type="text" value="{{$event->title}}" name="title">
           </div>
         </div>
         
         <div class="field">
           <div class="control">
-            <textarea class="textarea" placeholder="Event Description"  >{{$event->description}}</textarea>
+            <textarea class="textarea" placeholder="Event Description" name="description">{{$event->description}} </textarea>
           </div>
         </div>
 

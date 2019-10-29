@@ -24,7 +24,7 @@ Auth::routes();
 Route::group(['middleware'=>'auth'], function(){
 // EVENTS
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/add-event', 'EventsController@AddEventForm')->name('newevent');
 Route::post('/add', 'EventsController@AddEvent')->name('event.save');
 Route::get('/home', 'EventsController@ShowEvent')->name('events');
